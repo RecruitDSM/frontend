@@ -1,0 +1,96 @@
+#filter-button{
+    margin-left:auto;
+}
+
+#recruit-enroll-link{
+    background-color: #0084FF;
+    color: white;
+    border-radius: 5px;
+    border:none;
+    font-size:16px;
+    font-weight: 600;
+    font-family: 'Nanum Gothic', sans-serif;
+    float:right;
+    padding:10px;
+    padding-left:20px;
+    padding-right:20px;
+}
+#recruit-enroll-link{
+order: 5;
+margin-left: 20px;
+}
+
+.slider-img{
+    width:200px;
+    height:100px;
+}
+
+.slider-wrapper {
+    padding-right: 20px;
+    width:400px;
+    
+    float: left;
+  }
+  
+  .slick-slide img {
+   
+    width:390px;
+    height: 270px;
+    border-radius:4px;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
+  }
+
+
+.slick-prev:before, .slick-next:before{
+    color:black;
+}
+
+.completed{
+    float: right !important;
+    color: white !important;
+    background: #ff0000d1;
+    border-radius: 3px;
+    padding: 5px;
+    font-weight: 600;
+    min-width: 27px;
+    margin:2px;
+  }
+  
+  .in-progress{
+    float: right !important;
+    color: white !important;
+    background: #22c503d1;
+    border-radius: 3px;
+    padding: 5px;
+    font-weight: 600;
+    min-width: 44px;
+    margin:2px;
+  }
+
+#recruitment-list .content-item-summary span{
+    color:#0000008a;
+
+}
+#search-result-list .content-item-summary span{
+    color:#0000008a;
+
+}
+
+#recruitment-detail .content-item-summary div{
+    margin-top:5px;
+    margin-bottom:5px;
+
+}
+
+#recruitment-detail .content-item-summary span{
+    font-size:15px;
+    line-height:1.2em;
+}
+
+#apply-button{
+    width:100px;
+    margin-top:10px;
+    margin-left:auto;
+}
+
+

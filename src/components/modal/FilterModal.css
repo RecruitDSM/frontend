@@ -1,0 +1,65 @@
+#modal-background-layer{
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background: rgba(0,0,0,.6)
+
+}
+
+
+#modal-container{
+    margin: 200px auto;
+    border: 1px solid #bbbbbb;
+    width: 300px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.1);
+    background:white;
+}
+
+#modal-container h1{
+    font-weight: 600;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 20px;
+    margin-top:0px;
+    margin-bottom:20px;
+}
+
+#filter-content{
+    margin-bottom:10px;
+}
+
+#filter-content p{
+    text-align: left;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 600;
+    font-size:17px;
+}
+
+
+.filter-element-container{
+    display:flex;
+    flex-wrap : wrap;
+    margin-left:0px;
+    
+}
+
+.filter-element{
+    margin:5px;
+    margin-left:0px;
+}
+
+.filter-element input{
+
+    margin-right:5px;
+    display:inline;
+}
+
+.filter-element label{
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Nanum Gothic', sans-serif;
+    display:inline;
+}

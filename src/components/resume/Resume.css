@@ -1,0 +1,20 @@
+#resume-header span{
+    margin-left:auto;
+    padding:6px;
+    font-weight: 600;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 20px;
+
+}
+
+#resume-form{
+    margin-left:auto;
+}
+
+.react-pdf__Page__canvas{
+    margin: 0px auto;
+}
+
+.normal-text{
+    font-family: 'Noto Sans KR', sans-serif;
+}

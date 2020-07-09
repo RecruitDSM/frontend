@@ -1,0 +1,23 @@
+#rate-span{
+    font-family: 'Do Hyeon, sans-serif';
+    font-size: xx-large;
+    font-weight: 900;
+    text-align: right;
+    padding-right: 100px;
+    margin:5px;
+}
+
+#date-span{
+    font-family: 'Do Hyeon, sans-serif';
+    font-size:'large';
+    text-align: right;
+    padding-right: 100px;
+    padding-bottom:100px;
+    margin:5px;
+}
+
+#word-cloud-wrapper{
+    min-height:810px;
+   
+    background:#00000005;
+}

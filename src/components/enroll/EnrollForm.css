@@ -1,0 +1,91 @@
+.enroll-form-container{
+    margin: 80px auto;
+    border: 1px solid #bbbbbb;
+    width: 1000px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.1);
+}
+
+.enroll-form-container h1{
+    font-weight: 600;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 20px;
+    margin-top:0px;
+    margin-bottom:20px;
+}
+
+.enroll-form input, label{
+    display:block;
+}
+
+.enroll-form input, .enroll-form select{
+    border-radius: 3px;
+    border: 1px solid gray;
+    margin-bottom:15px;
+    width:985px;
+    height:22px;
+    font-size:15px;
+    padding:5px;
+}
+
+.enroll-form select{
+    height:35px;
+    width:995px;
+}
+
+.enroll-form label{
+    text-align: left;
+    margin-bottom:10px;
+    font-size: 16px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.enroll-button{
+    background-color: #0084FF;
+    color: white;
+    border-radius: 5px;
+    border:none;
+    width: 100px;
+    height: 40px;
+    font-size: inherit;
+    font-weight: 600;
+    font-family: 'Nanum Gothic', sans-serif;
+    margin-top:15px;
+    cursor:pointer;
+}
+
+
+.short-form-element{
+    width:90px;
+    display:inline-block;
+}
+
+.short-form-element input{
+    width:80%
+}
+
+#short-form-element-container{
+    display:flex;
+    justify-content: space-between;
+}
+
+
+
+.enroll-form textarea{
+    border-radius: 3px;
+    border: 1px solid gray;
+    margin-bottom:15px;
+    width:990px;
+    margin-left:-2px;
+    height:400px;
+    font-size:15px;
+}
+
+#notice-content-input{
+    height:400px;
+}
+
+#recruit-info-input, #position-info-input, #company-info-input{
+    height:80px;
+}

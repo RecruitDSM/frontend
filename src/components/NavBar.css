@@ -1,0 +1,68 @@
+
+
+.App-nav {
+  height: 5%;
+  width: 100%;
+  min-width:1200px;
+  box-sizing: border-box;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow:0 1px 0 0 rgba(0,0,0,.1);
+}
+
+.App-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.App-nav li {
+  float: left;
+}
+
+.App-nav a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  color:black;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 600;
+  font-size:15px;
+}
+
+
+
+#search-input{
+  border-radius: 15px;
+  height: 25px;
+  width: 350px;
+  display: inline-block;
+  margin:11px;
+  border:1px solid #cccccc;  
+}
+
+#search-link{
+padding-left:0px;
+}
+
+#search-img{
+  width:16px;
+  height:16px;
+}
+
+#search-bar{
+  display:flex;
+  margin-right:50px;
+  align-content: center;
+}
+
+#recruitdsm-link {
+  font-family: 'Ubuntu', sans-serif;
+  color: #0084FF;
+  font-size: larger;
+  display:inline;
+}
+

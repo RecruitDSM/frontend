@@ -1,0 +1,15 @@
+.display-block {
+    display: block;
+    z-index:9999;
+  }
+  
+  .display-none {
+    display: none;
+  }
+
+#close-button{
+  float:right;
+  font-family:'Nanum Gothic', sans-serif;
+  font-size:20px;
+  color:#4a4a4a;
+}
