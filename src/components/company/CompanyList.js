@@ -1,59 +1,64 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
-import CompanyItem from './CompanyItem';
 import InfiniteScroll from "react-infinite-scroll-component";
 
+import { baseURL } from '../../data/api';
+import CompanyItem from './CompanyItem';
 
-class CompanyList extends Component {
 
-    constructor(props){
-        super(props)
-        this.state = { companys: [], hasMore:true, isAuthorized:false}
-    }
+const CompanyList = () => {
 
-    componentDidMount() {
-        this.fetchData(0);
-    }
+  const [companys, setCompanys] = React.useState([]);
+  const [hasMore, setHasMore] = React.useState(true);
+  const [isAuthorized, setIsAuthorized] = React.useState(false);
 
-    fetchData(skip){
-        fetch('https://api.recruitdsm.ga/api/company?skip='+skip , {
-            method: 'GET',
-            headers: {
-                'Authorization':`Bearer ${window.sessionStorage.getItem("token")}`
-            }
-        })
-        .then(res => res.json())
-        .then(res => {
-            if(res.companys.length == 0)
-                this.setState({companys: this.state.companys, hasMore: false, isAuthorized:res.isAuthorized})
-            else
-                this.setState({ companys: this.state.companys.concat(res.companys), hasMore: true, isAuthorized:res.isAuthorized})
-            console.log(this.state.isAuthorized);
-            })
-        .catch( error => { console.log(error)});
-    }
+  React.useEffect(() => {
+    fetchData(0);
+  }, [])
 
-    render() {
-        return(
-            
-        <div id="company-list">
-        {this.state.isAuthorized?
-            <div className="content-header">
-                <Link to="/enroll/company" className="normal-button link-button margin-left-auto">등록</Link>
-            </div> : null}
-            <div className="content-body">
+  const fetchData = (skip) => {
+    fetch(`${baseURL}/company?skip=${skip}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${window.sessionStorage.getItem("token")}`
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        if (res.companys.length === 0) {
+          setCompanys(companys);
+          setHasMore(false);
+          setIsAuthorized(res.isAuthorized);
+        }
+        else {
+          setCompanys(companys.concat(res.companys));
+          setHasMore(true);
+          setIsAuthorized(res.isAuthorized);
+        }
+      })
+      .catch(error => { console.log(error) });
+  }
+
+  return (
+
+    <div id="company-list">
+      {isAuthorized &&
+        <div className="content-header">
+          <Link to="/enroll/company" className="normal-button link-button margin-left-auto">등록</Link>
+        </div>}
+      <div className="content-body">
         <InfiniteScroll
-            dataLength={this.state.companys.length} //This is important field to render the next data
-            next={() => this.fetchData(this.state.companys.length)}
-            hasMore={this.state.hasMore}
-            height={835}
-            loader={<h4>불러오는 중입니다.</h4>}
-            >
-            {this.state.companys.map((company, index) => <CompanyItem company={company} key={index} />)}
+          dataLength={companys.length} //This is important field to render the next data
+          next={() => fetchData(companys.length)}
+          hasMore={hasMore}
+          height={835}
+          loader={<h4>불러오는 중입니다.</h4>}
+        >
+          {companys.map((company, index) => <CompanyItem company={company} key={index} />)}
         </InfiniteScroll>
-        </div>
-        </div>
-        );
-    }
+      </div>
+    </div>
+  );
+
 }
 export default CompanyList;

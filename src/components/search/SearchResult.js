@@ -3,11 +3,10 @@ import SearchResultList from "./SearchResultList";
 import { Route } from "react-router-dom";
 
 
-function SearchResult ({match}) {
-
-      return (
-            <Route path={`${match.path}/:keyword`} component={SearchResultList} />
-      );
+function SearchResult({ match }) {
+  return (
+    <Route path={`${match.path}/:keyword`} component={SearchResultList} />
+  );
 
 }
 

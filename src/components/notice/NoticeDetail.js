@@ -1,47 +1,50 @@
-import React, {Component} from 'react';
+import React from 'react';
+
+import { baseURL } from '../../data/api';
 import "./Notice.css"
 
-class NoticeDetail extends Component{
+const NoticeDetail = (props) => {
 
-    state = { notice: {} }
-    componentDidMount() {
-        const {id} = this.props.match.params;
-        fetch(`https://api.recruitdsm.ga/api/notice/${id}`, {
-            method: 'GET',
-            headers: {
-                'Authorization':`Bearer ${window.sessionStorage.getItem("token")}`
-        }})
-        .then(res => res.json())
-        .then(res => {
-          this.setState({notice: res.notice});
-        })
-        .catch( error => { console.log(error)});
-    }
+  const [notice, setNotice] = React.useState({});
 
-    render(){
-        return (
-        <div>
-            <div className="notice-header">
-            <ul>
-                <li className="float-left">{this.state.notice.title}</li>
-              
-                <li className="float-right" id="notice-header-date">{this.state.notice.date}</li>
-                <li className="float-right">{this.state.notice.author}</li>  
-            </ul>
-            </div>
+  React.useEffect(() => {
+    const { id } = props.match.params;
+    fetch(`${baseURL}/notice/${id}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${window.sessionStorage.getItem("token")}`
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        setNotice(res.notice)
+      })
+      .catch(error => { console.log(error) });
+  }, []);
 
-        <div className="notice-content">
-            {this.state.notice.content}
-            {this.state.notice.attachment_paths && this.state.notice.attachment_paths.length > 0 ? <p>첨부파일</p> : null }
-            {
-                (this.state.notice.attachment_paths || []).map((attachment, index) =>
-                <a target="_blank" href={attachment} key={index} className="attachment-link">{attachment.split("/").pop()}</a>
-                )
-            }
-            </div>
-        </div>
-        );
-    }
+  return (
+    <div>
+      <div className="notice-header">
+        <ul>
+          <li className="float-left">{notice.title}</li>
+
+          <li className="float-right" id="notice-header-date">{notice.date}</li>
+          <li className="float-right">{notice.author}</li>
+        </ul>
+      </div>
+
+      <div className="notice-content">
+        {notice.content}
+        {notice.attachment_paths && notice.attachment_paths.length > 0 ? <p>첨부파일</p> : null}
+        {
+          (notice.attachment_paths || []).map((attachment, index) =>
+            <a target="_blank" href={attachment} key={index} className="attachment-link">{attachment.split("/").pop()}</a>
+          )
+        }
+      </div>
+    </div>
+  );
+
 }
 
 export default NoticeDetail;
